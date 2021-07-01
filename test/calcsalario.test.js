@@ -3,7 +3,7 @@ const cs = new CalcSalario();
 
 describe('Calculadora de Salários de Funcionários' , () => {
     
-    test('cálculo de salário líquido de desenvolvedor com salário >= R$ 3.000,00' , () => {
+    test('cálculo de salário líquido de DESENVOLVEDOR com salário >= R$ 3.000,00' , () => {
         const funcionario = {
             nome: 'Joao das Couves',
             email: 'jdcouves@email.com',
@@ -12,7 +12,7 @@ describe('Calculadora de Salários de Funcionários' , () => {
         };
         expect(cs.calcularLiquido(funcionario)).toBe(2400.00);
     });
-    test('cálculo de salário líquido de desenvolvedor com salário < R$ 3.000,00' , () => {
+    test('cálculo de salário líquido de DESENVOLVEDOR com salário < R$ 3.000,00' , () => {
         const funcionario = {
             nome: 'Joao das Couves',
             email: 'jdcouves@email.com',
@@ -20,5 +20,23 @@ describe('Calculadora de Salários de Funcionários' , () => {
             cargo: 'DESENVOLVEDOR'
         };
         expect(cs.calcularLiquido(funcionario)).toBe(2250.00);
+    });
+    test('cálculo de salário líquido de DBA com salário >= R$ 2.000,00' , () => {
+        const funcionario = {
+            nome: 'Joao das Couves',
+            email: 'jdcouves@email.com',
+            salarioBase: 2000.00,
+            cargo: 'DBA'
+        };
+        expect(cs.calcularLiquido(funcionario)).toBe(1500.00);
+    });
+    test('cálculo de salário líquido de DBA com salário < R$ 2.000,00' , () => {
+        const funcionario = {
+            nome: 'Joao das Couves',
+            email: 'jdcouves@email.com',
+            salarioBase: 1500.00,
+            cargo: 'DBA'
+        };
+        expect(cs.calcularLiquido(funcionario)).toBe(1275.00);
     });
 });
