@@ -1,5 +1,5 @@
-const {toBeDeepCloseTo} = require('jest-matcher-deep-close-to');
-expect.extend({toBeDeepCloseTo});
+const CalcSalario = require('../lib/calcsalario')
+const cs = new CalcSalario();
 
 describe('Calculadora de Salários de Funcionários' , () => {
     
@@ -10,8 +10,7 @@ describe('Calculadora de Salários de Funcionários' , () => {
             salarioBase: 3000.00,
             cargo: 'DESENVOLVEDOR'
         };
-        const salario = cs.calculoLiquido(funcionario);
-        expect(salario).toBe(2400.00);
+        expect(cs.calcularLiquido(funcionario)).toBe(2400.00);
     });
     test('cálculo de salário líquido de desenvolvedor com salário < R$ 3.000,00' , () => {
         const funcionario = {
@@ -20,7 +19,6 @@ describe('Calculadora de Salários de Funcionários' , () => {
             salarioBase: 2500.00,
             cargo: 'DESENVOLVEDOR'
         };
-        const salario = cs.calculoLiquido(funcionario);
-        expect(salario).toBe(2250.00);
+        expect(cs.calcularLiquido(funcionario)).toBe(2250.00);
     });
 });
