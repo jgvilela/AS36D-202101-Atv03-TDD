@@ -56,5 +56,22 @@ describe('Calculadora de Salários de Funcionários' , () => {
             cargo: 'TESTADOR'
         };
         expect(cs.calcularLiquido(funcionario)).toBe(1275.00);
+    });test('cálculo de salário líquido de GERENTE com salário >= R$ 5.000,00' , () => {
+        const funcionario = {
+            nome: 'Joao das Couves',
+            email: 'jdcouves@email.com',
+            salarioBase: 5000.00,
+            cargo: 'GERENTE'
+        };
+        expect(cs.calcularLiquido(funcionario)).toBe(3500.00);
+    });
+    test('cálculo de salário líquido de GERENTE com salário < R$ 5.000,00' , () => {
+        const funcionario = {
+            nome: 'Joao das Couves',
+            email: 'jdcouves@email.com',
+            salarioBase: 4500.00,
+            cargo: 'GERENTE'
+        };
+        expect(cs.calcularLiquido(funcionario)).toBe(3600.00);
     });
 });
