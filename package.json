@@ -1,0 +1,23 @@
+{
+  "name": "as36d-202101-atv03-tdd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgvilela/AS36D-202101-Atv03-TDD.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jgvilela/AS36D-202101-Atv03-TDD/issues"
+  },
+  "homepage": "https://github.com/jgvilela/AS36D-202101-Atv03-TDD#readme",
+  "devDependencies": {
+    "jest": "^27.0.6",
+    "jest-matcher-deep-close-to": "^2.0.1"
+  }
+}
