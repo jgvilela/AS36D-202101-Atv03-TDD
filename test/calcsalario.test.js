@@ -39,4 +39,22 @@ describe('Calculadora de Salários de Funcionários' , () => {
         };
         expect(cs.calcularLiquido(funcionario)).toBe(1275.00);
     });
+    test('cálculo de salário líquido de TESTADOR com salário >= R$ 2.000,00' , () => {
+        const funcionario = {
+            nome: 'Joao das Couves',
+            email: 'jdcouves@email.com',
+            salarioBase: 2000.00,
+            cargo: 'TESTADOR'
+        };
+        expect(cs.calcularLiquido(funcionario)).toBe(1500.00);
+    });
+    test('cálculo de salário líquido de TESTADOR com salário < R$ 2.000,00' , () => {
+        const funcionario = {
+            nome: 'Joao das Couves',
+            email: 'jdcouves@email.com',
+            salarioBase: 1500.00,
+            cargo: 'TESTADOR'
+        };
+        expect(cs.calcularLiquido(funcionario)).toBe(1275.00);
+    });
 });
